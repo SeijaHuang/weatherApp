@@ -1,5 +1,5 @@
 import React from "react";
-import Date from "./component/Date";
+import Date from "../../../Date";
 import CityName from "../../../CityName";
 import Temperature from "./component/Temperature";
 import TemperatureRange from "../../../TemperatureRange";
@@ -14,7 +14,10 @@ const CurrentCity = () => {
         className="absolute right-0 top-0 object-cover"
         alt=""
       />
-      <Date />
+      <Date
+        className="container flex justify-start text-white"
+        date="23 July, Sunday 12:00"
+      />
       <CityName cityName="Shanghai" className="text-[2rem] text-white" />
       <div className="text-center">
         <Temperature />
