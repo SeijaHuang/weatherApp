@@ -3,7 +3,7 @@ import Date from "./component/Date";
 import CityName from "../../../CityName";
 import Temperature from "./component/Temperature";
 import TemperatureRange from "./component/TemperatureRange";
-import WeatherIcon from "./component/WeatherIcon";
+import WeatherIcon from "../../../WeatherIcon";
 import Meta from "./component/Meta";
 import CloudImage from "./assets/background/Cloudy_day_background.png";
 const CurrentCity = () => {
@@ -20,7 +20,7 @@ const CurrentCity = () => {
         <Temperature />
         <TemperatureRange />
       </div>
-      <WeatherIcon />
+      <WeatherIcon className="" weatherCondition="Cloudy" />
       <Meta />
     </div>
   );
