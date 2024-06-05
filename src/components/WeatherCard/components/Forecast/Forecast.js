@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import DayOfWeek from "./DayOfWeek";
-import cloudyDay from "./DayOfWeek/weather_icon/Cloudy_day.png";
-import cloudy from "./DayOfWeek/weather_icon/Cloudy.png";
-import rain from "./DayOfWeek/weather_icon/Rain.png";
-import sunny from "./DayOfWeek/weather_icon/Sunny.png";
+import DayOfWeek from "./component/DayOfWeek";
+import cloudyDay from "./component/DayOfWeek/weather_icon/Cloudy_day.png";
+import cloudy from "./component/DayOfWeek/weather_icon/Cloudy.png";
+import rain from "./component/DayOfWeek/weather_icon/Rain.png";
+import sunny from "./component/DayOfWeek/weather_icon/Sunny.png";
 const Forecast = () => {
   const [forecastData] = useState([
     {

@@ -1,6 +1,6 @@
 import "./App.css";
 import BackgroundImage from "./components/BackgroundImage";
-import WeatherCard from "./components/WeatherCard";
+import WeatherCard from "./components/WeatherCard/";
 
 function App() {
   return (

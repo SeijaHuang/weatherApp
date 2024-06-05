@@ -1,13 +1,13 @@
 import React from "react";
-import City from "./City";
-import sunny from "./weather_icon/Sunny.png";
-import cloudy from "./weather_icon/Cloudy.png";
-import cloudyDay from "./weather_icon/Cloudy_day.png";
-import snow from "./weather_icon/Snow.png";
-import Sydney from "./City/CityImage/Sydney.png";
-import Shanghai from "./City/CityImage/Shanghai.png";
-import NewYork from "./City/CityImage/Newyork.png";
-import London from "./City/CityImage/London.png";
+import City from "./component/City";
+import sunny from "./component/weather_icon/Sunny.png";
+import cloudy from "./component/weather_icon/Cloudy.png";
+import cloudyDay from "./component/weather_icon/Cloudy_day.png";
+import snow from "./component/weather_icon/Snow.png";
+import Sydney from "./component/City/CityImage/Sydney.png";
+import Shanghai from "./component/City/CityImage/Shanghai.png";
+import NewYork from "./component/City/CityImage/Newyork.png";
+import London from "./component/City/CityImage/London.png";
 const OtherCities = () => {
   const cities = [
     {

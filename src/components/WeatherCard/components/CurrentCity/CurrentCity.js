@@ -1,10 +1,10 @@
 import React from "react";
-import Date from "./Date";
-import Name from "./Name";
-import Temperature from "./Temperature";
-import TemperatureRange from "./TemperatureRange";
-import WeatherIcon from "./WeatherIcon";
-import Meta from "./Meta";
+import Date from "./component/Date";
+import Name from "./component/Name";
+import Temperature from "./component/Temperature";
+import TemperatureRange from "./component/TemperatureRange";
+import WeatherIcon from "./component/WeatherIcon";
+import Meta from "./component/Meta";
 import CloudImage from "./background/Cloudy_day_background.png";
 const CurrentCity = () => {
   return (
