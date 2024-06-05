@@ -1,40 +1,37 @@
 import React from "react";
 import City from "./component/City";
-import sunny from "./component/weather_icon/Sunny.png";
-import cloudy from "./component/weather_icon/Cloudy.png";
-import cloudyDay from "./component/weather_icon/Cloudy_day.png";
-import snow from "./component/weather_icon/Snow.png";
-import Sydney from "./component/City/CityImage/Sydney.png";
-import Shanghai from "./component/City/CityImage/Shanghai.png";
-import NewYork from "./component/City/CityImage/Newyork.png";
-import London from "./component/City/CityImage/London.png";
+
+import Sydney from "./component/City/assets/CityImage/Sydney.png";
+import Shanghai from "./component/City/assets/CityImage/Shanghai.png";
+import NewYork from "./component/City/assets/CityImage/Newyork.png";
+import London from "./component/City/assets/CityImage/London.png";
 const OtherCities = () => {
   const cities = [
     {
       name: "Sydney",
       tempRange: "28~32°",
-      icon: sunny,
+      icon: "Sunny",
       img: Sydney,
       backgroundColor: "bg-gradient-to-l from-[#88adf5] to-[#6495f3]",
     },
     {
       name: "Shanghai",
       tempRange: "20~23°",
-      icon: cloudy,
+      icon: "Cloudy",
       img: Shanghai,
       backgroundColor: "bg-gradient-to-l from-[#89adf5] to-[#5e91f3]",
     },
     {
       name: "New York",
       tempRange: "18~20°",
-      icon: cloudyDay,
+      icon: "CloudyDay",
       img: NewYork,
       backgroundColor: "bg-gradient-to-l from-[#7e93f4] to-[#5e72e6]",
     },
     {
       name: "London",
       tempRange: "20~23°",
-      icon: snow,
+      icon: "Snow",
       img: London,
       backgroundColor: "bg-gradient-to-l from-[#8786e9] to-[#7369df]",
     },
