@@ -1,12 +1,12 @@
 import React from "react";
-import Name from "./Name";
+import CityName from "../../../../../CityName";
 import Date from "./Date";
 import WeatherIcon from "./WeatherIcon";
 import TemperatureRange from "./TemperatureRange";
 const DayOfWeek = ({ data }) => {
   return (
     <div className="container flex flex-col items-center">
-      <Name name={data.name} />
+      <CityName cityName={data.name} className="text-[1.7rem] font-[500]" />
       <Date date={data.date} />
       <WeatherIcon icon={data.iconURL} />
       <TemperatureRange range={data.temperatureRange} />

@@ -1,6 +1,6 @@
 import React from "react";
 import Date from "./component/Date";
-import CityName from "../../../CityName/index";
+import CityName from "../../../CityName";
 import Temperature from "./component/Temperature";
 import TemperatureRange from "./component/TemperatureRange";
 import WeatherIcon from "./component/WeatherIcon";
