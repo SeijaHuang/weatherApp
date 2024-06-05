@@ -1,6 +1,6 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
-import Name from "./Name";
+import CityName from "../../../../../CityName";
 import TemperatureRange from "./TemperatureRange";
 
 const City = ({ cityInfo }) => {
@@ -14,7 +14,7 @@ const City = ({ cityInfo }) => {
         alt="city"
       />
       <WeatherIcon icon={cityInfo.icon} />
-      <Name name={cityInfo.name} />
+      <CityName cityName={cityInfo.name} className="text-[1.5rem] text-white" />
       <TemperatureRange tempRange={cityInfo.tempRange} />
     </div>
   );
