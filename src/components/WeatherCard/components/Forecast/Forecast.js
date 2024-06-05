@@ -7,25 +7,25 @@ const Forecast = () => {
       name: "Monday",
       date: "24 July",
       icon: "Rain",
-      temperatureRange: "20~25°",
+      tempRange: "20~25°",
     },
     {
       name: "Tuesday",
       date: "25 July",
       icon: "CloudyDay",
-      temperatureRange: "18~20°",
+      tempRange: "18~20°",
     },
     {
       name: "Wednesday",
       date: "26 July",
       icon: "Cloudy",
-      temperatureRange: "20~23°",
+      tempRange: "20~23°",
     },
     {
       name: "Thursday",
       date: "27 July",
       icon: "Sunny",
-      temperatureRange: "28~32°",
+      tempRange: "28~32°",
     },
   ]);
   return (
