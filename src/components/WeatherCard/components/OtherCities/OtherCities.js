@@ -38,7 +38,7 @@ const OtherCities = () => {
   return (
     <div className="contain col-span-6 row-span-2 row-end-7 flex items-end justify-between gap-[2.5rem] pl-[2rem]">
       {cities.map((city) => {
-        return <City cityInfo={city} />;
+        return <City key={city.name} cityInfo={city} />;
       })}
     </div>
   );

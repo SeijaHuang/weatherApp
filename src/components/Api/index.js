@@ -5,6 +5,6 @@ const getWeatherData = (cityName) => {
   ).then((res) => res.json());
 };
 
-getWeatherData("sydney");
+console.log(getWeatherData("sydney"));
 
 export default getWeatherData;

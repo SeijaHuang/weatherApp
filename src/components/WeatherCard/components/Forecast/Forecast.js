@@ -29,7 +29,7 @@ const Forecast = () => {
     },
   ]);
   return (
-    <div className="container col-span-6 row-span-3 flex items-center justify-evenly text-[#241e4f]">
+    <div className="container col-span-6 row-span-3 flex items-center justify-between text-[#241e4f]">
       {forecastData.map((data, index) => {
         return <DayOfWeek key={index} data={data}></DayOfWeek>;
       })}
