@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 import DayOfWeek from "./component/DayOfWeek";
-import cloudyDay from "./component/DayOfWeek/weather_icon/Cloudy_day.png";
-import cloudy from "./component/DayOfWeek/weather_icon/Cloudy.png";
-import rain from "./component/DayOfWeek/weather_icon/Rain.png";
-import sunny from "./component/DayOfWeek/weather_icon/Sunny.png";
+
 const Forecast = () => {
   const [forecastData] = useState([
     {
       name: "Monday",
       date: "24 July",
-      iconURL: rain,
+      icon: "Rain",
       temperatureRange: "20~25°",
     },
     {
       name: "Tuesday",
       date: "25 July",
-      iconURL: cloudyDay,
+      icon: "CloudyDay",
       temperatureRange: "18~20°",
     },
     {
       name: "Wednesday",
       date: "26 July",
-      iconURL: cloudy,
+      icon: "Cloudy",
       temperatureRange: "20~23°",
     },
     {
       name: "Thursday",
       date: "27 July",
-      iconURL: sunny,
+      icon: "Sunny",
       temperatureRange: "28~32°",
     },
   ]);
