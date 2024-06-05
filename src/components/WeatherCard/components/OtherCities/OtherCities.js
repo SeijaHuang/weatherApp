@@ -1,6 +1,5 @@
 import React from "react";
 import City from "./component/City";
-
 import Sydney from "./component/City/assets/CityImage/Sydney.png";
 import Shanghai from "./component/City/assets/CityImage/Shanghai.png";
 import NewYork from "./component/City/assets/CityImage/Newyork.png";
