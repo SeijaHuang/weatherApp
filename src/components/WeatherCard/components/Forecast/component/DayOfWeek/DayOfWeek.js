@@ -1,6 +1,6 @@
 import React from "react";
 import CityName from "../../../../../CityName";
-import Date from "./Date";
+import Date from "../../../../../Date";
 import WeatherIcon from "../../../../../WeatherIcon";
 import TemperatureRange from "../../../../../TemperatureRange";
 const DayOfWeek = ({ data }) => {
