@@ -2,7 +2,7 @@ import React from "react";
 import Date from "./component/Date";
 import CityName from "../../../CityName";
 import Temperature from "./component/Temperature";
-import TemperatureRange from "./component/TemperatureRange";
+import TemperatureRange from "../../../TemperatureRange";
 import WeatherIcon from "../../../WeatherIcon";
 import Meta from "./component/Meta";
 import CloudImage from "./assets/background/Cloudy_day_background.png";
@@ -18,7 +18,10 @@ const CurrentCity = () => {
       <CityName cityName="Shanghai" className="text-[2rem] text-white" />
       <div className="text-center">
         <Temperature />
-        <TemperatureRange />
+        <TemperatureRange
+          className="translate-y-[-1.5rem] text-white"
+          tempRange="20~23°"
+        />
       </div>
       <WeatherIcon className="" weatherCondition="Cloudy" />
       <Meta />
