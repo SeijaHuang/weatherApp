@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import DayOfWeek from "./component/DayOfWeek";
 
@@ -6,6 +7,7 @@ const Forecast = (props) => {
 
   const [forecastData, setForecastDate] = useState([]);
   useEffect(() => {
+    setForecastDate([]);
     forecast.map((forecast) => {
       const {
         date,
@@ -14,10 +16,10 @@ const Forecast = (props) => {
       setForecastDate((prevData) => [
         ...prevData,
         {
-          name: "xDay",
-          date: date,
+          name: dayjs(date).format("dddd"),
+          date: dayjs(date).format("DD MMMM"),
           icon: "Rain",
-          tempRange: `${minTemp}~${maxTemp}`,
+          tempRange: `${minTemp}~${maxTemp}°`,
         },
       ]);
     });
