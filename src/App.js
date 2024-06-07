@@ -11,7 +11,7 @@ function App() {
       const key = "f45f20e1d4e1403492362048240206";
       try {
         const response = await fetch(
-          `https://api.weatherapi.com/v1/forecast.json?q=${"sydney"}&days=4&key=${key}`,
+          `https://api.weatherapi.com/v1/forecast.json?q=${"sydney"}&days=5&key=${key}`,
         );
         if (!response.ok) {
           throw new Error("Data get failed");
