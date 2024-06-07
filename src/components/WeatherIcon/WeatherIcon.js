@@ -13,7 +13,7 @@ const weatherIcon = {
   snow: Snow,
   sunny: Sunny,
 };
-console.log(Object.keys(weatherIcon));
+
 const weatherConditionHandler = (condition) => {
   for (let inherentIcon of Object.keys(weatherIcon)) {
     if (condition.includes(inherentIcon)) return inherentIcon;

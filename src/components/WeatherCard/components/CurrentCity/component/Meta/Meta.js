@@ -6,7 +6,7 @@ import feelsLike from "./assets/meta_icon/Somatosensory_temperature.svg";
 const Meta = ({ humidityData, wind, feelsLikeData }) => {
   const metaInfo = [
     {
-      weatherData: humidityData,
+      weatherData: `${humidityData}%`,
       url: humidity,
     },
     {

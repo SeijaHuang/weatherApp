@@ -11,14 +11,18 @@ const Forecast = (props) => {
     forecast.map((forecast) => {
       const {
         date,
-        day: { maxtemp_c: maxTemp, mintemp_c: minTemp },
+        day: {
+          maxtemp_c: maxTemp,
+          mintemp_c: minTemp,
+          condition: { text },
+        },
       } = forecast;
       setForecastDate((prevData) => [
         ...prevData,
         {
           name: dayjs(date).format("dddd"),
           date: dayjs(date).format("DD MMMM"),
-          icon: "rain",
+          icon: text.toLowerCase(),
           tempRange: `${minTemp}~${maxTemp}°`,
         },
       ]);
