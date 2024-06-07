@@ -6,7 +6,11 @@ import TemperatureRange from "../../../TemperatureRange";
 import WeatherIcon from "../../../WeatherIcon";
 import Meta from "./component/Meta";
 import CloudImage from "./assets/background/Cloudy_day_background.png";
-const CurrentCity = () => {
+import dayjs from "dayjs";
+
+const CurrentCity = (props) => {
+  console.log();
+  const { cityName, temp, humidity, wind, feelsLike } = props;
   return (
     <div className=" container flex h-[100%] w-[100%] flex-col items-center justify-between rounded-[2rem] bg-gradient-to-b from-[#81abfc] to-[#3d7ff9]  p-[1.5rem]">
       <img
@@ -16,18 +20,18 @@ const CurrentCity = () => {
       />
       <Date
         className="container flex justify-start text-white"
-        date="23 July, Sunday 12:00"
+        date={dayjs().format("DD MMMM, dddd hh:mm")}
       />
-      <CityName cityName="Shanghai" className="text-[2rem] text-white" />
+      <CityName cityName={cityName} className="text-[2rem] text-white" />
       <div className="text-center">
-        <Temperature />
+        <Temperature temp={temp} />
         <TemperatureRange
           className="translate-y-[-1.5rem] text-white"
           tempRange="20~23°"
         />
       </div>
       <WeatherIcon className="" weatherCondition="Cloudy" />
-      <Meta />
+      <Meta humidityData={humidity} wind={wind} feelsLikeData={feelsLike} />
     </div>
   );
 };

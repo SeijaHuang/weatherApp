@@ -3,14 +3,14 @@ import humidity from "./assets/meta_icon/humidity.svg";
 import windSpeed from "./assets/meta_icon/wind_speed.svg";
 import pm from "./assets/meta_icon/PM2.5.svg";
 import feelsLike from "./assets/meta_icon/Somatosensory_temperature.svg";
-const Meta = () => {
+const Meta = ({ humidityData, wind, feelsLikeData }) => {
   const metaInfo = [
     {
-      weatherData: "85%",
+      weatherData: humidityData,
       url: humidity,
     },
     {
-      weatherData: "9km/h",
+      weatherData: `${wind}km/h`,
       url: windSpeed,
     },
     {
@@ -18,7 +18,7 @@ const Meta = () => {
       url: pm,
     },
     {
-      weatherData: "26°",
+      weatherData: `${feelsLikeData}°`,
       url: feelsLike,
     },
   ];
@@ -28,7 +28,11 @@ const Meta = () => {
       {metaInfo.map((info) => {
         return (
           <div key={info.weatherData} className="flex flex-col items-center">
-            <img className="mb-[0.5rem] h-[2rem] w-[2rem] " src={info.url} />
+            <img
+              className="mb-[0.5rem] h-[2rem] w-[2rem] "
+              src={info.url}
+              alt=""
+            />
             <p>{info.weatherData}</p>
           </div>
         );

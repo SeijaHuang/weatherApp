@@ -1,33 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DayOfWeek from "./component/DayOfWeek";
 
-const Forecast = () => {
-  const [forecastData] = useState([
-    {
-      name: "Monday",
-      date: "24 July",
-      icon: "Rain",
-      tempRange: "20~25°",
-    },
-    {
-      name: "Tuesday",
-      date: "25 July",
-      icon: "CloudyDay",
-      tempRange: "18~20°",
-    },
-    {
-      name: "Wednesday",
-      date: "26 July",
-      icon: "Cloudy",
-      tempRange: "20~23°",
-    },
-    {
-      name: "Thursday",
-      date: "27 July",
-      icon: "Sunny",
-      tempRange: "28~32°",
-    },
-  ]);
+const Forecast = (props) => {
+  const { forecast } = props;
+
+  const [forecastData, setForecastDate] = useState([]);
+  useEffect(() => {
+    forecast.map((forecast) => {
+      const {
+        date,
+        day: { maxtemp_c: maxTemp, mintemp_c: minTemp },
+      } = forecast;
+      setForecastDate((prevData) => [
+        ...prevData,
+        {
+          name: "xDay",
+          date: date,
+          icon: "Rain",
+          tempRange: `${minTemp}~${maxTemp}`,
+        },
+      ]);
+    });
+  }, [forecast]);
+  console.log(forecastData);
   return (
     <div className="container col-span-6 row-span-3 flex items-center justify-between text-[#241e4f]">
       {forecastData.map((data, index) => {

@@ -1,7 +1,7 @@
 import React from "react";
 
-const Temperature = () => {
-  return <div className="text-[6rem] text-white">23°</div>;
+const Temperature = ({ temp }) => {
+  return <div className="text-[6rem] text-white">{temp}°</div>;
 };
 
 export default Temperature;
