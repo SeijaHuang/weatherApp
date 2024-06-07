@@ -9,8 +9,7 @@ import CloudImage from "./assets/background/Cloudy_day_background.png";
 import dayjs from "dayjs";
 
 const CurrentCity = (props) => {
-  console.log();
-  const { cityName, temp, humidity, wind, feelsLike } = props;
+  const { cityName, temp, humidity, wind, feelsLike, condition } = props;
   return (
     <div className=" container flex h-[100%] w-[100%] flex-col items-center justify-between rounded-[2rem] bg-gradient-to-b from-[#81abfc] to-[#3d7ff9]  p-[1.5rem]">
       <img
@@ -30,7 +29,7 @@ const CurrentCity = (props) => {
           tempRange="20~23°"
         />
       </div>
-      <WeatherIcon className="" weatherCondition="Cloudy" />
+      <WeatherIcon className="" weatherCondition={condition.toLowerCase()} />
       <Meta humidityData={humidity} wind={wind} feelsLikeData={feelsLike} />
     </div>
   );

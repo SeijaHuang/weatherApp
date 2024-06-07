@@ -18,13 +18,12 @@ const Forecast = (props) => {
         {
           name: dayjs(date).format("dddd"),
           date: dayjs(date).format("DD MMMM"),
-          icon: "Rain",
+          icon: "rain",
           tempRange: `${minTemp}~${maxTemp}°`,
         },
       ]);
     });
   }, [forecast]);
-  console.log(forecastData);
   return (
     <div className="container col-span-6 row-span-3 flex items-center justify-between text-[#241e4f]">
       {forecastData.map((data, index) => {
