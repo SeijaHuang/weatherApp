@@ -5,15 +5,33 @@ import Temperature from "./component/Temperature";
 import TemperatureRange from "../../../TemperatureRange";
 import WeatherIcon from "../../../WeatherIcon";
 import Meta from "./component/Meta";
-import CloudImage from "./assets/background/Cloudy_day_background.png";
+import CloudyDay from "./assets/background/Cloudy_day_background.png";
+import Hail from "./assets/background/Hail_background.png";
+import Rain from "./assets/background/Rain_background.png";
+import Snow from "./assets/background/Snow_background.png";
+import Sunny from "./assets/background/Sunny day_background.png";
 import dayjs from "dayjs";
 
 const CurrentCity = (props) => {
   const { cityName, temp, humidity, wind, feelsLike, condition } = props;
+  const weatherBackgroundImg = {
+    cloudyday: CloudyDay,
+    hail: Hail,
+    rain: Rain,
+    snow: Snow,
+    sunny: Sunny,
+  };
+  const transformedCondition = condition.toLowerCase();
+  const weatherBackgroundImgHandler = (condition) => {
+    for (let inherentIcon of Object.keys(weatherBackgroundImg)) {
+      if (condition.includes(inherentIcon)) return inherentIcon;
+    }
+  };
+  const imgSrc = weatherBackgroundImgHandler(transformedCondition);
   return (
     <div className=" container flex h-[100%] w-[100%] flex-col items-center justify-between rounded-[2rem] bg-gradient-to-b from-[#81abfc] to-[#3d7ff9]  p-[1.5rem]">
       <img
-        src={CloudImage}
+        src={weatherBackgroundImg[imgSrc]}
         className="absolute right-0 top-0 object-cover"
         alt=""
       />
@@ -29,7 +47,7 @@ const CurrentCity = (props) => {
           tempRange="20~23°"
         />
       </div>
-      <WeatherIcon className="" weatherCondition={condition.toLowerCase()} />
+      <WeatherIcon className="" weatherCondition={transformedCondition} />
       <Meta humidityData={humidity} wind={wind} feelsLikeData={feelsLike} />
     </div>
   );
