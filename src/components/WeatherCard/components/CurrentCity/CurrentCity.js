@@ -16,16 +16,21 @@ const CurrentCity = (props) => {
   const { currentDetailedData, cityName, currentData } = props;
   //get data from current of API Data
   const {
-    condition: { text },
     air_quality: { pm2_5: pmData },
     humidity,
     temp_c: temp,
     wind_kph: wind,
     feelslike_c: feelsLike,
   } = currentData;
+
   const {
-    day: { maxtemp_c: maxTemp, mintemp_c: minTemp },
+    day: {
+      condition: { text },
+      maxtemp_c: maxTemp,
+      mintemp_c: minTemp,
+    },
   } = currentDetailedData;
+
   const weatherBackgroundImg = {
     cloudyday: CloudyDay,
     hail: Hail,
@@ -33,6 +38,7 @@ const CurrentCity = (props) => {
     snow: Snow,
     sunny: Sunny,
   };
+
   const transformedCondition = text.toLowerCase();
   const weatherBackgroundImgHandler = (condition) => {
     for (let inherentIcon of Object.keys(weatherBackgroundImg)) {
