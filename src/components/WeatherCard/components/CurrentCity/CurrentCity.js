@@ -13,7 +13,7 @@ import Sunny from "./assets/background/Sunny day_background.png";
 import dayjs from "dayjs";
 
 const CurrentCity = (props) => {
-  const { currentDetailed, cityName, currentData } = props;
+  const { currentDetailedData, cityName, currentData } = props;
   //get data from current of API Data
   const {
     condition,
@@ -25,7 +25,7 @@ const CurrentCity = (props) => {
   } = currentData;
   const {
     day: { maxtemp_c: maxTemp, mintemp_c: minTemp },
-  } = currentDetailed;
+  } = currentDetailedData;
   const weatherBackgroundImg = {
     cloudyday: CloudyDay,
     hail: Hail,

@@ -33,7 +33,12 @@ function App() {
   };
 
   if (loading) {
-    return <div>loading...</div>;
+    return (
+      <div className=" flex h-screen w-svw items-center justify-center text-[5rem] uppercase  text-white">
+        <BackgroundImage></BackgroundImage>
+        loading...
+      </div>
+    );
   }
 
   console.log(weatherData);
