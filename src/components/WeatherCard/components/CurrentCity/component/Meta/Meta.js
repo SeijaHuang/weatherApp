@@ -3,7 +3,7 @@ import humidity from "./assets/meta_icon/humidity.svg";
 import windSpeed from "./assets/meta_icon/wind_speed.svg";
 import pm from "./assets/meta_icon/PM2.5.svg";
 import feelsLike from "./assets/meta_icon/Somatosensory_temperature.svg";
-const Meta = ({ humidityData, wind, feelsLikeData }) => {
+const Meta = ({ humidityData, wind, feelsLikeData, pmData }) => {
   const metaInfo = [
     {
       weatherData: `${humidityData}%`,
@@ -14,7 +14,7 @@ const Meta = ({ humidityData, wind, feelsLikeData }) => {
       url: windSpeed,
     },
     {
-      weatherData: "75µg",
+      weatherData: `${pmData * 100}µg`,
       url: pm,
     },
     {

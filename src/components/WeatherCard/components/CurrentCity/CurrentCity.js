@@ -17,6 +17,7 @@ const CurrentCity = (props) => {
   //get data from current of API Data
   const {
     condition,
+    air_quality: { pm2_5: pmData },
     humidity,
     temp_c: temp,
     wind_kph: wind,
@@ -59,7 +60,12 @@ const CurrentCity = (props) => {
         />
       </div>
       <WeatherIcon className="" weatherCondition={transformedCondition} />
-      <Meta humidityData={humidity} wind={wind} feelsLikeData={feelsLike} />
+      <Meta
+        humidityData={humidity}
+        wind={wind}
+        feelsLikeData={feelsLike}
+        pmData={pmData}
+      />
     </div>
   );
 };
