@@ -6,7 +6,6 @@ const SearchBar = (props) => {
 
   const onChangeHandler = (e) => {
     setInputValue(e.target.value.trim().toLowerCase());
-    console.log(inputValue);
   };
 
   const onClickHandler = () => {

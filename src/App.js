@@ -8,6 +8,7 @@ function App() {
   const [weatherData, setWeatherData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [city, setCity] = useState("");
+  const [historyData, setHistoryData] = useState([]);
 
   const fetchWeatherData = async (city = "sydney") => {
     const key = "f45f20e1d4e1403492362048240206";
@@ -17,11 +18,32 @@ function App() {
       )
       .then(function (response) {
         setWeatherData(response.data);
+        historyDataHandler(response.data);
         setLoading(false);
       })
       .catch(function (e) {
         console.log(e);
       });
+  };
+
+  const historyDataHandler = (history) => {
+    if (historyData.length >= 4) {
+      historyData.shift();
+      setHistoryData([
+        ...historyData,
+        {
+          location: history.location,
+          current: history.forecast.forecastday[0],
+        },
+      ]);
+    }
+    setHistoryData([
+      ...historyData,
+      {
+        location: history.location,
+        current: history.forecast.forecastday[0],
+      },
+    ]);
   };
 
   useEffect(() => {
@@ -35,6 +57,8 @@ function App() {
   useEffect(() => {
     fetchWeatherData(city);
   }, [city]);
+
+  console.log(historyData);
 
   if (loading) {
     return (
@@ -51,6 +75,8 @@ function App() {
       <WeatherCard
         weatherData={weatherData}
         onSetCity={onSetCity}
+        historyCity={city}
+        historyData={historyData}
       ></WeatherCard>
     </main>
   );
