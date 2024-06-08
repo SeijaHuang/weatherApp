@@ -16,7 +16,7 @@ const CurrentCity = (props) => {
   const { currentDetailedData, cityName, currentData } = props;
   //get data from current of API Data
   const {
-    condition,
+    condition: { text },
     air_quality: { pm2_5: pmData },
     humidity,
     temp_c: temp,
@@ -33,7 +33,7 @@ const CurrentCity = (props) => {
     snow: Snow,
     sunny: Sunny,
   };
-  const transformedCondition = condition.text.toLowerCase();
+  const transformedCondition = text.toLowerCase();
   const weatherBackgroundImgHandler = (condition) => {
     for (let inherentIcon of Object.keys(weatherBackgroundImg)) {
       if (condition.includes(inherentIcon)) return inherentIcon;

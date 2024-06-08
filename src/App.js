@@ -25,7 +25,7 @@ function App() {
         console.log(e);
       });
   };
-
+  console.log(weatherData);
   const historyDataHandler = (history) => {
     if (historyData.length >= 4) {
       historyData.shift();
