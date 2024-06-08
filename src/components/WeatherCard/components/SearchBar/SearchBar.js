@@ -13,6 +13,12 @@ const SearchBar = (props) => {
     setInputValue("");
   };
 
+  const onKeyDownHandler = (e) => {
+    if (e.key === "Enter") {
+      onClickHandler();
+    }
+  };
+
   return (
     <div className="container relative col-span-3 row-span-1 row-start-4 mt-[3rem] flex min-w-[50%] items-center pl-[2rem] pt-[3rem]">
       <input
@@ -21,6 +27,7 @@ const SearchBar = (props) => {
         placeholder="Search for a city"
         className="relative w-full rounded-[10px] p-[10px] pr-[12px] text-[0.9rem]"
         onChange={onChangeHandler}
+        onKeyDown={onKeyDownHandler}
       />
       <button
         className=" absolute right-[2px] rounded-[10px] bg-[#5d4dde] px-[20px] py-[7px] text-[0.9rem] text-[#fff]"
