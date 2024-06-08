@@ -18,7 +18,7 @@ function App() {
       )
       .then(function (response) {
         setWeatherData(response.data);
-        historyDataHandler(response.data);
+        if (!loading) historyDataHandler(response.data);
         setLoading(false);
       })
       .catch(function (e) {

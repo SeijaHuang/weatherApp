@@ -31,6 +31,7 @@ const CurrentCity = (props) => {
     },
   } = currentDetailedData;
 
+  // set a default background image array
   const weatherBackgroundImg = {
     cloudyday: CloudyDay,
     hail: Hail,
@@ -39,12 +40,13 @@ const CurrentCity = (props) => {
     sunny: Sunny,
   };
 
-  const transformedCondition = text.toLowerCase();
+  //set a function to match condition from API with default background image array
   const weatherBackgroundImgHandler = (condition) => {
     for (let inherentIcon of Object.keys(weatherBackgroundImg)) {
       if (condition.includes(inherentIcon)) return inherentIcon;
     }
   };
+  const transformedCondition = text.toLowerCase();
   const imgSrc = weatherBackgroundImgHandler(transformedCondition);
   return (
     <div className=" container flex h-[100%] w-[100%] flex-col items-center justify-between rounded-[2rem] bg-gradient-to-b from-[#81abfc] to-[#3d7ff9]  p-[1.5rem]">
