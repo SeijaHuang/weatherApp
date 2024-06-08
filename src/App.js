@@ -10,11 +10,11 @@ function App() {
   const [city, setCity] = useState("");
 
   useEffect(() => {
-    const fetchWeatherData = async () => {
+    const fetchWeatherData = async (city = "sydney") => {
       const key = "f45f20e1d4e1403492362048240206";
       axios
         .get(
-          `https://api.weatherapi.com/v1/forecast.json?q=${"sydney"}&days=5&key=${key}&aqi=yes`,
+          `https://api.weatherapi.com/v1/forecast.json?q=${city}&days=5&key=${key}&aqi=yes`,
         )
         .then(function (response) {
           setWeatherData(response.data);
