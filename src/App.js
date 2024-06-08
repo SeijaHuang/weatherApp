@@ -2,33 +2,38 @@ import "./App.css";
 import BackgroundImage from "./components/BackgroundImage";
 import WeatherCard from "./components/WeatherCard/";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
   const [weatherData, setWeatherData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [city, setCity] = useState("");
+
   useEffect(() => {
     const fetchWeatherData = async () => {
       const key = "f45f20e1d4e1403492362048240206";
-      try {
-        const response = await fetch(
-          `https://api.weatherapi.com/v1/forecast.json?q=${"sydney"}&days=5&key=${key}`,
-        );
-        if (!response.ok) {
-          throw new Error("Data get failed");
-        }
-        const data = await response.json();
-        setWeatherData(data);
-        setLoading(false);
-      } catch (e) {
-        console.log(e);
-      }
+      axios
+        .get(
+          `https://api.weatherapi.com/v1/forecast.json?q=${"sydney"}&days=5&key=${key}&aqi=yes`,
+        )
+        .then(function (response) {
+          setWeatherData(response.data);
+          setLoading(false);
+        })
+        .catch(function (e) {
+          console.log(e);
+        });
     };
 
     fetchWeatherData();
   }, []);
 
+  const onSetCity = (city) => {
+    setCity(city);
+  };
+
   if (loading) {
-    return <div></div>;
+    return <div>loading...</div>;
   }
 
   console.log(weatherData);
@@ -36,7 +41,10 @@ function App() {
   return (
     <main className="flex h-screen w-svw items-center justify-center">
       <BackgroundImage></BackgroundImage>
-      <WeatherCard weatherData={weatherData}></WeatherCard>
+      <WeatherCard
+        weatherData={weatherData}
+        onSetCity={onSetCity}
+      ></WeatherCard>
     </main>
   );
 }

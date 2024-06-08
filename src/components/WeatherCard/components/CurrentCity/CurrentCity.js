@@ -13,7 +13,18 @@ import Sunny from "./assets/background/Sunny day_background.png";
 import dayjs from "dayjs";
 
 const CurrentCity = (props) => {
-  const { cityName, temp, humidity, wind, feelsLike, condition } = props;
+  const { currentDetailed, cityName, currentData } = props;
+  //get data from current of API Data
+  const {
+    condition,
+    humidity,
+    temp_c: temp,
+    wind_kph: wind,
+    feelslike_c: feelsLike,
+  } = currentData;
+  const {
+    day: { maxtemp_c: maxTemp, mintemp_c: minTemp },
+  } = currentDetailed;
   const weatherBackgroundImg = {
     cloudyday: CloudyDay,
     hail: Hail,
@@ -21,7 +32,7 @@ const CurrentCity = (props) => {
     snow: Snow,
     sunny: Sunny,
   };
-  const transformedCondition = condition.toLowerCase();
+  const transformedCondition = condition.text.toLowerCase();
   const weatherBackgroundImgHandler = (condition) => {
     for (let inherentIcon of Object.keys(weatherBackgroundImg)) {
       if (condition.includes(inherentIcon)) return inherentIcon;
@@ -44,7 +55,7 @@ const CurrentCity = (props) => {
         <Temperature temp={temp} />
         <TemperatureRange
           className="translate-y-[-1.5rem] text-white"
-          tempRange="20~23°"
+          tempRange={`${minTemp}~${maxTemp}°`}
         />
       </div>
       <WeatherIcon className="" weatherCondition={transformedCondition} />
