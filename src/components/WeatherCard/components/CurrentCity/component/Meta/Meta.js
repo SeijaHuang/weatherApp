@@ -14,7 +14,7 @@ const Meta = ({ humidityData, wind, feelsLikeData, pmData }) => {
       url: windSpeed,
     },
     {
-      weatherData: `${pmData * 100}µg`,
+      weatherData: `${(pmData * 100).toFixed(0)}µg`,
       url: pm,
     },
     {

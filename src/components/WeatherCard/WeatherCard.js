@@ -10,8 +10,8 @@ const WeatherCard = (props) => {
       current,
       location: { name },
       forecast: { forecastday },
-      onSetCity,
     },
+    onSetCity,
   } = props;
   const [currentCity, ...forecastdays] = forecastday;
 

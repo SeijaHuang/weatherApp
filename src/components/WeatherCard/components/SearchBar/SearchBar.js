@@ -2,19 +2,17 @@ import React, { useState } from "react";
 
 const SearchBar = (props) => {
   const { onSetCity } = props;
-  const [searchValue, setSearchValue] = useState("");
   const [inputValue, setInputValue] = useState("");
 
   const onChangeHandler = (e) => {
-    setInputValue(e.target.value);
+    setInputValue(e.target.value.trim().toLowerCase());
+    console.log(inputValue);
   };
 
   const onClickHandler = () => {
-    setSearchValue(inputValue);
+    onSetCity(inputValue);
     setInputValue("");
   };
-
-  console.log(searchValue);
 
   return (
     <div className="container relative col-span-3 row-span-1 row-start-4 mt-[3rem] flex min-w-[50%] items-center pl-[2rem] pt-[3rem]">

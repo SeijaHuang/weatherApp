@@ -49,7 +49,7 @@ const CurrentCity = (props) => {
       />
       <Date
         className="container flex justify-start text-white"
-        date={dayjs().format("DD MMMM, dddd hh:mm")}
+        date={dayjs().format("DD MMMM, dddd HH:mm")}
       />
       <CityName cityName={cityName} className="text-[2rem] text-white" />
       <div className="text-center">

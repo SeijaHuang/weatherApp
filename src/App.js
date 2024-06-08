@@ -9,28 +9,32 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [city, setCity] = useState("");
 
-  useEffect(() => {
-    const fetchWeatherData = async (city = "sydney") => {
-      const key = "f45f20e1d4e1403492362048240206";
-      axios
-        .get(
-          `https://api.weatherapi.com/v1/forecast.json?q=${city}&days=5&key=${key}&aqi=yes`,
-        )
-        .then(function (response) {
-          setWeatherData(response.data);
-          setLoading(false);
-        })
-        .catch(function (e) {
-          console.log(e);
-        });
-    };
+  const fetchWeatherData = async (city = "sydney") => {
+    const key = "f45f20e1d4e1403492362048240206";
+    axios
+      .get(
+        `https://api.weatherapi.com/v1/forecast.json?q=${city}&days=5&key=${key}&aqi=yes`,
+      )
+      .then(function (response) {
+        setWeatherData(response.data);
+        setLoading(false);
+      })
+      .catch(function (e) {
+        console.log(e);
+      });
+  };
 
+  useEffect(() => {
     fetchWeatherData();
   }, []);
 
   const onSetCity = (city) => {
     setCity(city);
   };
+
+  useEffect(() => {
+    fetchWeatherData(city);
+  }, [city]);
 
   if (loading) {
     return (
@@ -40,8 +44,6 @@ function App() {
       </div>
     );
   }
-
-  console.log(weatherData);
 
   return (
     <main className="flex h-screen w-svw items-center justify-center">
