@@ -25,7 +25,7 @@ function App() {
         console.log(e);
       });
   };
-  console.log(weatherData);
+
   const historyDataHandler = (history) => {
     if (historyData.length >= 4) {
       historyData.shift();
@@ -46,19 +46,19 @@ function App() {
     ]);
   };
 
+  //First time fetch data
   useEffect(() => {
     fetchWeatherData();
   }, []);
 
-  const onSetCity = (city) => {
-    setCity(city);
-  };
-
+  //After user search a city then to fetch data
   useEffect(() => {
     fetchWeatherData(city);
   }, [city]);
 
-  console.log(historyData);
+  const onSetCity = (city) => {
+    setCity(city);
+  };
 
   if (loading) {
     return (
