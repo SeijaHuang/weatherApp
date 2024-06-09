@@ -67,7 +67,10 @@ const CurrentCity = (props) => {
           tempRange={`${minTemp}~${maxTemp}°`}
         />
       </div>
-      <WeatherIcon className="" weatherCondition={transformedCondition} />
+      <WeatherIcon
+        className="max-h-[10rem] max-w-[10rem]"
+        weatherCondition={transformedCondition}
+      />
       <Meta
         humidityData={humidity}
         wind={wind}

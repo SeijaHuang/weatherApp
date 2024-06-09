@@ -27,7 +27,7 @@ const WeatherCard = (props) => {
           currentData={current}
         />
       </div>
-      <div className="container col-span-6 col-start-3 row-span-6 grid grid-cols-5 grid-rows-6 px-[2rem]">
+      <div className="container col-span-6 col-start-3 row-span-6 box-border grid grid-cols-5 grid-rows-6 px-[2rem]">
         <Forecast forecast={forecastdays} />
         <SearchBar onSetCity={onSetCity} />
         <OtherCities historyData={historyData} />
