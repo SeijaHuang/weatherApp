@@ -10,7 +10,7 @@ function App() {
   const [city, setCity] = useState("");
   const [historyData, setHistoryData] = useState([]);
 
-  const fetchWeatherData = async (city = "sydney") => {
+  const fetchWeatherData = (city = "sydney") => {
     const key = "f45f20e1d4e1403492362048240206";
     axios
       .get(

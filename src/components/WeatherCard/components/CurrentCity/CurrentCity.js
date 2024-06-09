@@ -68,7 +68,7 @@ const CurrentCity = (props) => {
         />
       </div>
       <WeatherIcon
-        className="max-h-[10rem] max-w-[10rem]"
+        className="max-w-[10rem] max-h-[10rem]"
         weatherCondition={transformedCondition}
       />
       <Meta
