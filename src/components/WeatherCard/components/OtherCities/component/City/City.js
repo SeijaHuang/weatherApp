@@ -6,7 +6,7 @@ import TemperatureRange from "../../../../../TemperatureRange";
 const City = ({ cityInfo }) => {
   return (
     <div
-      className={`container relative flex min-h-[9.5rem] max-w-[13rem] flex-col items-center justify-between rounded-[1.5rem] py-[1rem] shadow-xl ${cityInfo.backgroundColor}`}
+      className={`container relative flex min-h-[9.5rem] max-w-[15rem] flex-col items-center justify-between rounded-[1.5rem] py-[1rem] shadow-xl ${cityInfo.backgroundColor}`}
     >
       <img
         className="absolute left-0 top-0  h-full w-full rounded-[1.5rem] object-cover opacity-[.2]"
