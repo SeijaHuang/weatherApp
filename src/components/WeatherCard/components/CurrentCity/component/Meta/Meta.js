@@ -24,7 +24,7 @@ const Meta = ({ humidityData, wind, feelsLikeData, pmData }) => {
   ];
 
   return (
-    <div className="container flex  h-[7rem] w-[100%] items-center justify-between rounded-[1rem] bg-[#ebf2fe] p-[1.5rem]">
+    <div className="container flex  max-h-[7rem] w-[100%] items-center justify-between rounded-[1rem] bg-[#ebf2fe] p-[1.5rem]">
       {metaInfo.map((info) => {
         return (
           <div key={info.weatherData} className="flex flex-col items-center">
