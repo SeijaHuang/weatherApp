@@ -5,6 +5,7 @@ import DayOfWeek from "./component/DayOfWeek";
 const Forecast = (props) => {
   const { forecast } = props;
 
+  //convert forecast data from API into web required format
   const [forecastData, setForecastDate] = useState([]);
   useEffect(() => {
     setForecastDate([]);
@@ -28,6 +29,7 @@ const Forecast = (props) => {
       ]);
     });
   }, [forecast]);
+
   return (
     <div className="container col-span-6 row-span-3 flex items-center justify-between text-[#241e4f]">
       {forecastData.map((data, index) => {

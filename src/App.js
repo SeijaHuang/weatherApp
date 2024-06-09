@@ -46,6 +46,8 @@ function App() {
     ]);
   };
 
+  const onSetCity = (city) => setCity(city);
+
   //First time fetch data
   useEffect(() => {
     fetchWeatherData();
@@ -55,10 +57,6 @@ function App() {
   useEffect(() => {
     fetchWeatherData(city);
   }, [city]);
-
-  const onSetCity = (city) => {
-    setCity(city);
-  };
 
   if (loading) {
     return (

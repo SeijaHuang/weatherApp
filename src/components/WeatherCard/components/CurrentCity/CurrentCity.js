@@ -22,7 +22,6 @@ const CurrentCity = (props) => {
     wind_kph: wind,
     feelslike_c: feelsLike,
   } = currentData;
-
   const {
     day: {
       condition: { text },
@@ -48,6 +47,7 @@ const CurrentCity = (props) => {
   };
   const transformedCondition = text.toLowerCase();
   const imgSrc = weatherBackgroundImgHandler(transformedCondition);
+
   return (
     <div className=" container flex h-[100%] w-[100%] flex-col items-center justify-between rounded-[2rem] bg-gradient-to-b from-[#81abfc] to-[#3d7ff9]  p-[1.5rem]">
       <img
