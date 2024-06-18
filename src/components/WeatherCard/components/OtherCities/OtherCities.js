@@ -20,16 +20,14 @@ const OtherCities = (props) => {
   //convert data from API into web required search history data format
   let cities = [];
   historyData.map((history, index) => {
+    const { location, current } = history;
+    const { name } = location;
+    const { day } = current;
     const {
-      location: { name },
-      current: {
-        day: {
-          maxtemp_c: maxTemp,
-          mintemp_c: minTemp,
-          condition: { text },
-        },
-      },
-    } = history;
+      maxtemp_c: maxTemp,
+      mintemp_c: minTemp,
+      condition: { text },
+    } = day;
 
     cities = [
       ...cities,
