@@ -64,7 +64,7 @@ const CurrentCity = (props) => {
         <Temperature temp={temp} />
         <TemperatureRange
           className="translate-y-[-1.5rem] text-white"
-          tempRange={`${minTemp}~${maxTemp}°`}
+          tempRange={`${Math.round(minTemp)}~${Math.round(maxTemp)}°`}
         />
       </div>
       <WeatherIcon
