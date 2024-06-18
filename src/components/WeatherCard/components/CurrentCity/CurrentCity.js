@@ -13,7 +13,7 @@ import Sunny from "./assets/background/Sunny day_background.png";
 import dayjs from "dayjs";
 
 const CurrentCity = (props) => {
-  const { currentDetailedData, cityName, currentData } = props;
+  const { detailedData, cityName, currentData } = props;
   //get data from current of API Data
   const {
     air_quality: { pm2_5: pmData },
@@ -28,7 +28,7 @@ const CurrentCity = (props) => {
       maxtemp_c: maxTemp,
       mintemp_c: minTemp,
     },
-  } = currentDetailedData;
+  } = detailedData;
 
   // set a default background image array
   const weatherBackgroundImg = {
@@ -68,7 +68,7 @@ const CurrentCity = (props) => {
         />
       </div>
       <WeatherIcon
-        className="max-w-[10rem] max-h-[10rem]"
+        className="max-h-[10rem] max-w-[10rem]"
         weatherCondition={transformedCondition}
       />
       <Meta
