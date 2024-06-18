@@ -5,15 +5,10 @@ import SearchBar from "./components/SearchBar";
 import OtherCities from "./components/OtherCities/OtherCities";
 
 const WeatherCard = (props) => {
-  const {
-    weatherData: {
-      current,
-      location: { name },
-      forecast: { forecastday },
-    },
-    onSetCity,
-    historyData,
-  } = props;
+  const { weatherData, onSetCity, historyData } = props;
+  const { current, location, forecast } = weatherData;
+  const { name } = location;
+  const { forecastday } = forecast;
 
   //distinguish current and forecast data
   const [currentCity, ...forecastdays] = forecastday;
