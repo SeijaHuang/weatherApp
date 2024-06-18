@@ -10,14 +10,13 @@ const Forecast = (props) => {
   useEffect(() => {
     setForecastDate([]);
     forecast.map((forecast) => {
+      const { date, day } = forecast;
       const {
-        date,
-        day: {
-          maxtemp_c: maxTemp,
-          mintemp_c: minTemp,
-          condition: { text },
-        },
-      } = forecast;
+        maxtemp_c: maxTemp,
+        mintemp_c: minTemp,
+        condition: { text },
+      } = day;
+
       setForecastDate((prevData) => [
         ...prevData,
         {
