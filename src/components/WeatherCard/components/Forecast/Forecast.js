@@ -5,8 +5,9 @@ import DayOfWeek from "./component/DayOfWeek";
 const Forecast = (props) => {
   const { forecast } = props;
 
-  //convert forecast data from API into web required format
   const [forecastData, setForecastDate] = useState([]);
+
+  //convert forecast data from API into web required format
   useEffect(() => {
     setForecastDate([]);
     forecast.map((forecast) => {
@@ -23,7 +24,7 @@ const Forecast = (props) => {
           name: dayjs(date).format("dddd"),
           date: dayjs(date).format("DD MMMM"),
           icon: text.toLowerCase(),
-          tempRange: `${minTemp}~${maxTemp}°`,
+          tempRange: `${Math.round(minTemp)}~${Math.round(maxTemp)}°`,
         },
       ]);
     });
