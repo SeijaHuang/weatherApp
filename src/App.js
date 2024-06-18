@@ -3,6 +3,7 @@ import BackgroundImage from "./components/BackgroundImage";
 import WeatherCard from "./components/WeatherCard/";
 import { useState, useEffect } from "react";
 import getWeatherData from "./api/getWeatherData";
+import getGeolocation from "./helper/getGeolocation";
 
 function App() {
   const [weatherData, setWeatherData] = useState([]);
@@ -48,6 +49,7 @@ function App() {
   //First time fetch data
   useEffect(() => {
     fetchWeatherData();
+    getGeolocation();
   }, []);
 
   //After user search a city then to fetch data
