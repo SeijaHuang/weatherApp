@@ -10,6 +10,7 @@ function App() {
   const [city, setCity] = useState("");
   const [historyData, setHistoryData] = useState([]);
 
+  //Functions
   const fetchWeatherData = (city = "sydney") => {
     getWeatherData(city)
       .then((response) => {
@@ -21,26 +22,6 @@ function App() {
         console.log(e);
       });
   };
-
-  //First time fetch data
-  useEffect(() => {
-    fetchWeatherData();
-  }, []);
-
-  //After user search a city then to fetch data
-  useEffect(() => {
-    if (!city) return;
-    fetchWeatherData(city);
-  }, [city]);
-
-  if (loading) {
-    return (
-      <div className=" flex h-screen w-svw items-center justify-center text-[5rem] uppercase  text-white">
-        <BackgroundImage></BackgroundImage>
-        loading...
-      </div>
-    );
-  }
 
   const historyDataHandler = (history) => {
     if (historyData.length >= 4) {
@@ -63,6 +44,28 @@ function App() {
   };
 
   const onSetCity = (city) => setCity(city);
+
+  //First time fetch data
+  useEffect(() => {
+    fetchWeatherData();
+  }, []);
+
+  //After user search a city then to fetch data
+  useEffect(() => {
+    if (!city) return;
+    fetchWeatherData(city);
+  }, [city]);
+
+  //When fetching data, show loading page to user
+  if (loading) {
+    return (
+      <div className=" flex h-screen w-svw items-center justify-center text-[5rem] uppercase  text-white">
+        <BackgroundImage></BackgroundImage>
+        loading...
+      </div>
+    );
+  }
+
   return (
     <main className="flex h-screen w-svw items-center justify-center">
       <BackgroundImage></BackgroundImage>
