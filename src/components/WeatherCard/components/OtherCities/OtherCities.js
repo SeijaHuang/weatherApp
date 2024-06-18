@@ -33,7 +33,7 @@ const OtherCities = (props) => {
       ...cities,
       {
         name: name,
-        tempRange: `${minTemp}~${maxTemp}°`,
+        tempRange: `${Math.round(minTemp)}~${Math.round(maxTemp)}°`,
         icon: text.toLowerCase(),
         backgroundColor: backgroundColor[index],
         img: citiesImg[index],
