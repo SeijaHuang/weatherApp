@@ -46,25 +46,25 @@ function App() {
   //   ]);
   // };
 
-  useEffect(() => {
-    <FetchWeatherData
-      city={""}
-      loading={loading}
-      onSetLoading={onSetLoading}
-      historyDataHandler={historyDataHandler}
-      onSetWeatherData={onSetWeatherData}
-    />;
-  }, []);
+  // useEffect(() => {
+  //   <FetchWeatherData
+  //     city={""}
+  //     loading={loading}
+  //     onSetLoading={onSetLoading}
+  //     historyDataHandler={historyDataHandler}
+  //     onSetWeatherData={onSetWeatherData}
+  //   />;
+  // }, []);
 
-  useEffect(() => {
-    <FetchWeatherData
-      loading={loading}
-      city={city}
-      onSetLoading={onSetLoading}
-      historyDataHandler={historyDataHandler}
-      onSetWeatherData={onSetWeatherData}
-    />;
-  }, [city]);
+  // useEffect(() => {
+  //   <FetchWeatherData
+  //     loading={loading}
+  //     city={city}
+  //     onSetLoading={onSetLoading}
+  //     historyDataHandler={historyDataHandler}
+  //     onSetWeatherData={onSetWeatherData}
+  //   />;
+  // }, [city]);
 
   const onSetCity = (city) => setCity(city);
   const onSetLoading = (loading) => setLoading(loading);

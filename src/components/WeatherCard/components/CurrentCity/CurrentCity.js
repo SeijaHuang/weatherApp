@@ -22,7 +22,6 @@ const CurrentCity = (props) => {
     wind_kph: wind,
     feelslike_c: feelsLike,
   } = currentData;
-
   const {
     day: {
       condition: { text },
@@ -48,8 +47,9 @@ const CurrentCity = (props) => {
   };
   const transformedCondition = text.toLowerCase();
   const imgSrc = weatherBackgroundImgHandler(transformedCondition);
+
   return (
-    <div className=" container flex h-[100%] w-[100%] flex-col items-center justify-between rounded-[2rem] bg-gradient-to-b from-[#81abfc] to-[#3d7ff9]  p-[1.5rem]">
+    <div className=" container box-border flex h-[100%] w-[100%] flex-col items-center justify-between rounded-[2rem] bg-gradient-to-b from-[#81abfc]  to-[#3d7ff9] p-[1.5rem]">
       <img
         src={weatherBackgroundImg[imgSrc]}
         className="absolute right-0 top-0 object-cover"
@@ -67,7 +67,10 @@ const CurrentCity = (props) => {
           tempRange={`${minTemp}~${maxTemp}°`}
         />
       </div>
-      <WeatherIcon className="" weatherCondition={transformedCondition} />
+      <WeatherIcon
+        className="max-w-[10rem] max-h-[10rem]"
+        weatherCondition={transformedCondition}
+      />
       <Meta
         humidityData={humidity}
         wind={wind}
