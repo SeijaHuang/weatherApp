@@ -12,8 +12,8 @@ function App() {
   const [historyData, setHistoryData] = useState([]);
 
   //Functions
-  const fetchWeatherData = (city = "sydney") => {
-    getWeatherData(city)
+  const fetchWeatherData = (lat, lng) => {
+    getWeatherData("", lat, lng)
       .then((response) => {
         setWeatherData(response.data);
         if (!loading) historyDataHandler(response.data);
@@ -48,8 +48,15 @@ function App() {
 
   //First time fetch data
   useEffect(() => {
-    fetchWeatherData();
-    getGeolocation();
+    getGeolocation()
+      .then((res) => {
+        const { latitude: lat, longitude: lng } = res.coords;
+        console.log(res.coords);
+        return { lat, lng };
+      })
+      .then((data) => {
+        fetchWeatherData(data.lat, data.lng);
+      });
   }, []);
 
   //After user search a city then to fetch data
